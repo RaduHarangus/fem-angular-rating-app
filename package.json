@@ -9,7 +9,7 @@
     "test": "ng test",
     "build:local": "ng build --configuration production --base-href=/",
     "serve:dist": "npx serve dist/interactive-rating-component/browser",
-    "deploy:gh": "ng deploy --base-href=/fem-angular-rating-app/"
+    "deploy:gh": "ng build --configuration production --base-href=/fem-angular-rating-app/ && rm -rf docs && mkdir docs && cp -r dist/interactive-rating-component/browser/* docs"
   },
   "prettier": {
     "printWidth": 100,
