@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:local": "ng build --configuration production --base-href=/",
+    "serve:dist": "npx serve dist/interactive-rating-component/browser",
+    "deploy:gh": "ng deploy --base-href=/fem-angular-rating-app/"
   },
   "prettier": {
     "printWidth": 100,
