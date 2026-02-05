@@ -1,0 +1,35 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+    <header>
+        <img class="star-icon" src="../assets/icon-star.svg" alt="Star icon">
+    </header>
+    <main>
+        <h1>How did we do?</h1>
+        <p>Please let us know how we did with your support request.
+            All feedback is appreciated to help us improve our offering!
+        </p>
+        <ul>
+            @for (rating of ratingScale; track $index) {
+                <li>
+                    <input
+                            type="radio"
+                            name="rating"
+                            id="rating-{{ rating.value }}"
+                            [value]="rating.value"
+                            formControlName="rating"
+                            class="d-none"
+                    >
+                    <label for="rating-{{ rating.value }}" class="rating-btn">
+                        {{ rating.value }}
+                    </label>
+                </li>
+            }
+        </ul>
+    </main>
+    <footer>
+        <button
+                class="submit-button"
+                aria-label="submit rating form"
+                [disabled]="form.invalid"
+        >Submit</button>
+    </footer>
+</form>
